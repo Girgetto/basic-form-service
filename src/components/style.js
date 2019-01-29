@@ -5,7 +5,7 @@ const MainDiv = styled.div`
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #000;
+  background-color: #424242;
   color: #fff;
   font-size: 8vmin;
 `;

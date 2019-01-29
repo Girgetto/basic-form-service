@@ -50,5 +50,13 @@ table {
 }
 
 p {
+	display: flex;
+	align-items: flex-end;
 	font-size: 2rem;
+	font-weight: 100;
+	color: d6d6d2;
+}
+
+textarea:focus, input:focus{
+	outline: none;
 }

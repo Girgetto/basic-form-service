@@ -8,7 +8,7 @@ const Inputs = [
     { label: 'Type your last name:', name: 'surname' },
   ],
   [
-    { label: 'Insert your age:', name: 'age' },
+    { label: 'Insert your birth year:', name: 'birthYear' },
   ],
   [
     { final: true },

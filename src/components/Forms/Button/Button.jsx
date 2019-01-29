@@ -11,7 +11,7 @@ const Button = ({ incrementIndex }) => (
       href="/"
       onClick={incrementIndex}
     >
-      <p>Next</p>
+      <p style={center}>Next</p>
     </ButtonTag>
   </div>
 );

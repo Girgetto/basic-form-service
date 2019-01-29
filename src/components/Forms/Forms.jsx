@@ -6,7 +6,16 @@ const inputDivStyle = { display: 'flex', margin: '4rem' };
 const center = {
   display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column',
 };
-const inputStyle = { margin: '0 3rem', borderRadius: '6px', width: '15rem' };
+const inputStyle = {
+  margin: '0 3rem',
+  width: '20rem',
+  height: '5rem',
+  fontSize: '4vmin',
+  backgroundColor: '#424242',
+  color: '#fff',
+  border: 'none',
+  borderBottom: '1px solid #fff',
+};
 export default class Forms extends Component {
   constructor() {
     super();
@@ -14,7 +23,7 @@ export default class Forms extends Component {
       index: 0,
       name: '',
       surname: '',
-      age: '',
+      birthYear: '',
     };
     this.incrementIndex = this.incrementIndex.bind(this);
     this.handleInput = this.handleInput.bind(this);
@@ -33,35 +42,38 @@ export default class Forms extends Component {
   render() {
     const { Inputs } = this.props;
     const {
-      index, name, surname, age,
+      index, name, surname, birthYear,
     } = this.state;
+    const dt = new Date();
     return (
       <div style={{ textAlign: 'center' }}>
-        <h1>This is a simple form</h1>
-        {Inputs[index].map(item => (
-          <div key={item.label}>
-            {item.final
-              ? (
-                <div style={center}>
-                  <h1>{name}</h1>
-                  <h1>{surname}</h1>
-                  <h1>{age}</h1>
-                </div>
-              )
-              : (
-                <div style={inputDivStyle}>
-                  <p>{item.label}</p>
-                  <input
-                    key={item}
-                    type="text"
-                    name={item.name}
-                    onKeyUp={e => this.handleInput(e)}
-                    style={inputStyle}
-                  />
-                </div>
-              )}
-          </div>
-        ))}
+        <div style={{ height: '25rem' }}>
+          <h1>This is a simple form</h1>
+          {Inputs[index].map(item => (
+            <div key={item.label}>
+              {item.final
+                ? (
+                  <div style={center}>
+                    <h1>{name}</h1>
+                    <h1>{surname}</h1>
+                    <h1>{(+dt.getYear() + 2000) + birthYear}</h1>
+                  </div>
+                )
+                : (
+                  <div style={inputDivStyle}>
+                    <p>{item.label}</p>
+                    <input
+                      key={item}
+                      type="text"
+                      name={item.name}
+                      onKeyUp={e => this.handleInput(e)}
+                      style={inputStyle}
+                    />
+                  </div>
+                )}
+            </div>
+          ))}
+        </div>
         <Button incrementIndex={this.incrementIndex} />
       </div>
     );
