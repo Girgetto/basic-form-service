@@ -1,7 +1,7 @@
 const todos = (state = 0, action) => {
   switch (action.type) {
-    case 'INCREMENT_INDEX':
-      return state + 1;
+    case 'INCREMENT':
+      return state < 2 ? state + 1 : 0;
     default:
       return state;
   }

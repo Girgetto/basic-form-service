@@ -27,10 +27,10 @@ const Inputs = [
     { label: 'Insert your birth year:', name: 'birthYear' },
   ],
   [
-    { final: true },
+    { label: 'final', final: true },
   ],
 ];
-const Forms = ({ index }) => (
+const Forms = ({ index, addIndex }) => (
   <div style={{ textAlign: 'center' }}>
     <div style={{ height: '25rem' }}>
       <h1>This is a simple form</h1>
@@ -56,16 +56,18 @@ const Forms = ({ index }) => (
         </div>
       ))}
     </div>
-    <Button />
+    <Button addIndex={addIndex} />
   </div>
 );
 
 Forms.defaultProps = {
   index: 0,
+  addIndex: propTypes.func,
 };
 
 Forms.propTypes = {
   index: propTypes.number,
+  addIndex: propTypes.func,
 };
 
 export default connect()(Forms);

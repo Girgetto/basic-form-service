@@ -7,6 +7,11 @@ import rootReducer from './reducers';
 import App from './components/App';
 import './index.css';
 
-const store = createStore(rootReducer);
+/* eslint-disable no-underscore-dangle */
+const store = createStore(
+  rootReducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+);
+/* eslint-enable */
 
 render(<Provider store={store}><App /></Provider>, document.getElementById('app'));
