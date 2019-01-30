@@ -56,7 +56,7 @@ export default class Forms extends Component {
                   <div style={center}>
                     <h1>{name}</h1>
                     <h1>{surname}</h1>
-                    <h1>{(+dt.getYear() + 2000) + birthYear}</h1>
+                    <h1>{((+dt.getYear()) + 1900) - (+birthYear)}</h1>
                   </div>
                 )
                 : (
