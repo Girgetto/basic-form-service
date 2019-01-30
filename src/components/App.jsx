@@ -1,23 +1,10 @@
 import React from 'react';
 import MainDiv from './style';
-import Forms from './Forms';
-
-const Inputs = [
-  [
-    { label: 'Type your first name:', name: 'name' },
-    { label: 'Type your last name:', name: 'surname' },
-  ],
-  [
-    { label: 'Insert your birth year:', name: 'birthYear' },
-  ],
-  [
-    { final: true },
-  ],
-];
+import VisibleForm from '../containers/VisibleForm';
 
 const App = () => (
   <MainDiv>
-    <Forms Inputs={Inputs} />
+    <VisibleForm />
   </MainDiv>
 );
 
